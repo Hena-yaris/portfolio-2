@@ -1,21 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/layout/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+
+const geist = Geist({
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: "Henok's portfolio",
-  description: "Created by Henok T.",
+  description: "Modern full stack developer portfolio.",
 };
 
 export default function RootLayout({
@@ -24,14 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full`}
-    >
-      <body className="min-h-full flex flex-col">
-        <Navbar/>
+    <html lang="en">
+      <body className={geist.className}>
+        <Navbar />
         {children}
-        </body>
+      </body>
     </html>
   );
 }
