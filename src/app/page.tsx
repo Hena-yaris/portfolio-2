@@ -4,7 +4,7 @@ import SectionTitle from "../components/ui/SectionTitle";
 
 export default function Home() {
   return (
-     <main className="p-32">
+     <main className="pt-32">
           <Container>
               <SectionTitle
                subtitle="Foundation"
