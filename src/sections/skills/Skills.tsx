@@ -14,19 +14,16 @@ export default function Skills() {
             <div
               key={skill}
               className="
-                px-5
-                py-3
-                rounded-full
-                border
-                border-white/10
-                bg-white/[0.03]
-                text-zinc-300
-                text-sm
-                transition-all
-                duration-300
-                hover:border-white/20
-                hover:bg-white/[0.05]
-              "
+  glass-card
+  px-5
+  py-3
+  text-sm
+  text-zinc-300
+  transition-all
+  duration-300
+  hover:translate-y-[-2px]
+  hover:border-white/15
+"
             >
               {skill}
             </div>

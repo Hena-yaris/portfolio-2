@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       className="
-        min-h-screen
+        min-h-[110vh]
         flex
         items-center
       "
@@ -19,7 +19,6 @@ export default function Hero() {
               text-sm
               uppercase
               tracking-[0.2em]
-              text-zinc-500
               mb-6
             "
           >
@@ -29,8 +28,7 @@ export default function Hero() {
           {/* Main Heading */}
           <h1
             className="
-              text-5xl
-              md:text-7xl
+              text-6xl sm:text-7xl md:text-8xl
               font-semibold
               tracking-tight
               leading-[1]
@@ -44,8 +42,9 @@ export default function Hero() {
           <p
             className="
               text-lg
-              md:text-xl
-              text-zinc-400
+              md:text-2xl
+              font-light
+              
               leading-relaxed
               max-w-2xl
               mb-10
@@ -61,8 +60,7 @@ export default function Hero() {
             <button
               className="
                 text-sm
-                text-zinc-300
-                hover:text-white
+                
                 transition-colors
               "
             >
