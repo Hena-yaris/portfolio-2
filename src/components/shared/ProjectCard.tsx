@@ -2,17 +2,13 @@ export default function ProjectCard({ project }: any) {
   return (
     <div
       className="
-        border
-        border-white/10
-        rounded-3xl
-        p-8
-        bg-white/[0.02]
-        backdrop-blur-sm
-        transition-all
-        duration-300
-        hover:border-white/20
-        hover:bg-white/[0.04]
-      "
+  glass-card
+  p-8
+  transition-all
+  duration-300
+  hover:translate-y-[-4px]
+  hover:border-white/15
+"
     >
       {/* Title */}
       <h3
