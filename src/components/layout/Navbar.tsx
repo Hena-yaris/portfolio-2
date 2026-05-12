@@ -1,7 +1,14 @@
+"use client";
+import { useState } from "react";
+
 import Container from "../ui/Container";
 import { navigationLinks } from "@/src/data/navigation";
 
+import { Menu, X } from "lucide-react";
+
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header
       className="
@@ -22,7 +29,7 @@ export default function Navbar() {
             flex
             items-center
             justify-between
-            h-20
+            h-24
           "
         >
           {/* Logo */}
@@ -55,7 +62,54 @@ export default function Navbar() {
               </a>
             ))}
           </nav>
+
+          {/* Mobile Toggle */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="
+    md:hidden
+    text-zinc-300
+  "
+          >
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {isOpen && (
+          <div
+            className="
+                md:hidden
+                pb-6
+                animate-in
+                fade-in
+                duration-300
+              "
+          >
+            <nav
+              className="
+                  flex
+                  flex-col
+                  gap-4
+                "
+            >
+              {navigationLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="
+            text-zinc-300
+            hover:text-white
+            transition-colors
+          "
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        )}
       </Container>
     </header>
   );
