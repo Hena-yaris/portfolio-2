@@ -5,7 +5,7 @@ import { skills } from "@/src/data/skills";
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-32">
+    <section id="skills" className="py-24 md:py-32">
       <Container>
         <SectionTitle subtitle="Expertise" title="Skills & Technologies" />
 
@@ -14,16 +14,16 @@ export default function Skills() {
             <div
               key={skill}
               className="
-  glass-card
-  px-5
-  py-3
-  text-sm
-  text-zinc-300
-  transition-all
-  duration-300
-  hover:translate-y-[-2px]
-  hover:border-white/15
-"
+                glass-card
+                px-5
+                py-3
+                text-sm
+                text-zinc-300
+                transition-all
+                duration-300
+                hover:translate-y-[-2px]
+                hover:border-white/15
+              "
             >
               {skill}
             </div>

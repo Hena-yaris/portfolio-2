@@ -41,7 +41,7 @@ export default function Hero() {
 
           {/* Main Heading */}
           <motion.h1
-            className="text-6xl sm:text-7xl md:text-8xl font-semibold tracking-tight leading-[1] mb-8"
+            className="text-5xl sm:text-6xl md:text-8xl  font-semibold tracking-tight leading-[1] mb-8"
             variants={fadeUp}
           >
             Hi, I’m {personalInfo.name}.
@@ -49,7 +49,7 @@ export default function Hero() {
 
           {/* Description */}
           <motion.p
-            className="text-lg md:text-2xl font-light leading-relaxed max-w-2xl mb-10 text-zinc-400"
+            className="text-lg md:text-2xl font-light leading-relaxed max-w-xl md:max-w-2xl mb-10 text-zinc-400"
             variants={fadeUp}
           >
             {personalInfo.description}
