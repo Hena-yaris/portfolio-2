@@ -8,4 +8,12 @@ export const personalInfo = {
 
   about:
     "I enjoy designing and developing modern digital experiences with a strong focus on simplicity, scalability, and clean architecture. Currently exploring full stack development while building thoughtful interfaces and systems.",
+
+  email: "meraey21@gmail.com",
+
+  socials: {
+    github: "https://github.com/Hena-yaris",
+
+    linkedin: "https://www.linkedin.com/in/henayaris",
+  },
 };
