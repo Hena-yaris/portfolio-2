@@ -9,9 +9,11 @@ const geist = Geist({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Henok's portfolio",
-  description: "Modern full stack developer portfolio.",
+export const metadata = {
+  title: "Henok | Full Stack Developer",
+
+  description:
+    "Modern full stack developer portfolio focused on scalable frontend architecture, thoughtful design, and clean digital experiences.",
 };
 
 export default function RootLayout({

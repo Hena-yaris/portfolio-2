@@ -29,6 +29,7 @@ export default function Hero() {
           <motion.p
             className="
               text-sm
+              text-zinc-300
               uppercase
               tracking-[0.2em]
               mb-6
@@ -48,7 +49,7 @@ export default function Hero() {
 
           {/* Description */}
           <motion.p
-            className="text-lg md:text-2xl font-light leading-relaxed max-w-2xl mb-10"
+            className="text-lg md:text-2xl font-light leading-relaxed max-w-2xl mb-10 text-zinc-400"
             variants={fadeUp}
           >
             {personalInfo.description}
