@@ -11,7 +11,7 @@ import ProjectCard from "@/src/components/shared/ProjectCard";
 import { projects } from "@/src/data/projects";
 export default function Projects() {
   return (
-    <section id="projects" className="py-32">
+    <section id="projects" className="py-24 md:py-32">
       <Container>
         <SectionTitle subtitle="Selected Work" title="Projects" />
 
@@ -27,7 +27,6 @@ export default function Projects() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          
           {projects.map((project) => (
             <motion.div key={project.id} variants={fadeUp}>
               <ProjectCard project={project} />

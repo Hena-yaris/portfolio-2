@@ -9,7 +9,7 @@ export default function Footer() {
     <footer
       className="
         border-t
-        border-white/5
+        border-white/10
         py-10
       "
     >
@@ -45,6 +45,7 @@ export default function Footer() {
                 hover:text-white
                 transition-colors
               "
+              aria-label="GitHub Profile"
             >
               <Menu size={18} />
             </a>
@@ -58,6 +59,7 @@ export default function Footer() {
                 hover:text-white
                 transition-colors
               "
+              aria-label="LinkedIn Profile"
             >
               <Circle size={18} />
             </a>
