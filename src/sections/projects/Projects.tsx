@@ -1,3 +1,9 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+import { staggerContainer, fadeUp } from "@/src/lib/animations";
+
 import Container from "@/src/components/ui/Container";
 import SectionTitle from "@/src/components/ui/SectionTitle";
 import ProjectCard from "@/src/components/shared/ProjectCard";
@@ -9,18 +15,25 @@ export default function Projects() {
       <Container>
         <SectionTitle subtitle="Selected Work" title="Projects" />
 
-        <div
+        <motion.div
           className="
             grid
             grid-cols-1
             md:grid-cols-2
             gap-8
           "
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
         >
+          
           {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <motion.div key={project.id} variants={fadeUp}>
+              <ProjectCard project={project} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

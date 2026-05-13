@@ -1,6 +1,13 @@
+
+"use client";
+
 import Container from "@/src/components/ui/Container";
 import Button from "@/src/components/ui/Button";
 import { personalInfo } from "@/src/data/personal";
+
+import { motion } from "framer-motion";
+
+import { fadeUp, staggerContainer } from "@/src/lib/animations";
 
 export default function Hero() {
   return (
@@ -12,49 +19,43 @@ export default function Hero() {
       "
     >
       <Container>
-        <div className="max-w-4xl">
+        <motion.div
+          className="max-w-4xl"
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+        >
           {/* Small Intro */}
-          <p
+          <motion.p
             className="
               text-sm
               uppercase
               tracking-[0.2em]
               mb-6
             "
+            variants={fadeUp}
           >
             {personalInfo.title}
-          </p>
+          </motion.p>
 
           {/* Main Heading */}
-          <h1
-            className="
-              text-6xl sm:text-7xl md:text-8xl
-              font-semibold
-              tracking-tight
-              leading-[1]
-              mb-8
-            "
+          <motion.h1
+            className="text-6xl sm:text-7xl md:text-8xl font-semibold tracking-tight leading-[1] mb-8"
+            variants={fadeUp}
           >
             Hi, I’m {personalInfo.name}.
-          </h1>
+          </motion.h1>
 
           {/* Description */}
-          <p
-            className="
-              text-lg
-              md:text-2xl
-              font-light
-              
-              leading-relaxed
-              max-w-2xl
-              mb-10
-            "
+          <motion.p
+            className="text-lg md:text-2xl font-light leading-relaxed max-w-2xl mb-10"
+            variants={fadeUp}
           >
             {personalInfo.description}
-          </p>
+          </motion.p>
 
           {/* Actions */}
-          <div className="flex items-center gap-4">
+          <motion.div variants={fadeUp} className="flex items-center gap-4">
             <Button>View Projects</Button>
 
             <button
@@ -66,8 +67,8 @@ export default function Hero() {
             >
               Contact Me
             </button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </Container>
     </section>
   );
