@@ -1,14 +1,17 @@
+
+
+
 export default function ProjectCard({ project }: any) {
   return (
     <div
       className="
-  glass-card
-  p-8
-  transition-all
-  duration-300
-  hover:translate-y-[-4px]
-  hover:border-white/15
-"
+        glass-card
+        p-8
+        transition-all
+        duration-300
+        hover:translate-y-[-4px]
+        hover:border-white/15
+      "
     >
       {/* Title */}
       <h3
