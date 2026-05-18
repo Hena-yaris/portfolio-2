@@ -3,7 +3,7 @@ export interface PersonalInfo {
   name: string;
   title: string;
   tagline: string;
-  description: string; // This will now live exclusively in the About section
+  description: string; 
   email: string;
   socials: {
     github: string;
