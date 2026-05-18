@@ -1,73 +1,96 @@
 
 "use client";
 
-import Container from "@/src/components/ui/Container";
-import Button from "@/src/components/ui/Button";
+import { motion,Variants } from "framer-motion";
+import { ArrowDownRight } from "lucide-react";
+import Container from "@/src/components/ui/Container"; 
+import  {Button}  from "@/src/components/ui/Button"; 
+
+
+
 import { personalInfo } from "@/src/data/personal";
 
-import { motion } from "framer-motion";
 
-import { fadeUp, staggerContainer } from "@/src/lib/animations";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1, delayChildren: 0.1 },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { y: 12, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+  },
+};
 
 export default function Hero() {
   return (
     <section
-      className="
-        min-h-[110vh]
-        flex
-        items-center
-      "
+      id="home"
+      className="min-h-[80vh] flex items-center justify-center pt-20 pb-32 overflow-hidden"
     >
       <Container>
         <motion.div
-          className="max-w-4xl"
-          variants={staggerContainer}
+          variants={containerVariants}
           initial="hidden"
           animate="visible"
+          className="flex flex-col items-center text-center space-y-6 max-w-4xl mx-auto"
         >
-          {/* Small Intro */}
           <motion.p
-            className="
-              text-sm
-              text-zinc-300
-              uppercase
-              tracking-[0.2em]
-              mb-6
-            "
-            variants={fadeUp}
+            variants={itemVariants}
+            className="text-xs sm:text-sm font-medium tracking-widest text-accent uppercase"
           >
             {personalInfo.title}
           </motion.p>
 
-          {/* Main Heading */}
           <motion.h1
-            className="text-5xl sm:text-6xl md:text-8xl  font-semibold tracking-tight leading-[1] mb-8"
-            variants={fadeUp}
+            variants={itemVariants}
+            className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.05] text-white"
           >
-            Hi, I’m {personalInfo.name}.
+            I'm {personalInfo.name}. <br />
+            <span className="text-gradient">{personalInfo.tagline}</span>
           </motion.h1>
 
-          {/* Description */}
-          <motion.p
-            className="text-lg md:text-2xl font-light leading-relaxed max-w-xl md:max-w-2xl mb-10 text-zinc-400"
-            variants={fadeUp}
+          <motion.div
+            variants={itemVariants}
+            className="flex items-center justify-center gap-4 pt-4"
           >
-            {personalInfo.description}
-          </motion.p>
+            <Button  size="lg" className="flex items-center gap-2 group">
+              Explore Work
+              <ArrowDownRight
+                size={16}
+                className="transition-transform duration-300 group-hover:rotate-45"
+              />
+            </Button>
 
-          {/* Actions */}
-          <motion.div variants={fadeUp} className="flex items-center gap-4">
-            <Button>View Projects</Button>
-
-            <button
-              className="
-                text-sm
-                
-                transition-colors
-              "
-            >
-              Contact Me
-            </button>
+            <div className="flex items-center gap-1 border-l border-border-subtle pl-4 h-10">
+              <a
+                href={personalInfo.socials.github}
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 text-muted hover:text-foreground transition-colors duration-200"
+                aria-label="GitHub"
+              >
+                {/* <Github size={18} /> */}
+                Github
+              </a>
+              <a
+                href={personalInfo.socials.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 text-muted hover:text-foreground transition-colors duration-200"
+                aria-label="LinkedIn"
+              >
+                {/* <Linkedin size={18} /> */}
+                LinkedIn
+              </a>
+            </div>
           </motion.div>
         </motion.div>
       </Container>

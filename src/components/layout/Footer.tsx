@@ -1,69 +1,42 @@
-import Container from "@/src/components/ui/Container";
 
-import { Menu, Circle } from "lucide-react";
 
-import { personalInfo } from "@/src/data/personal";
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowUp } from "lucide-react";
+import Container from "../ui/Container";
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer
-      className="
-        border-t
-        border-white/10
-        py-10
-      "
-    >
+    <footer className="w-full border-t border-border-subtle bg-black py-8 mt-auto">
       <Container>
-        <div
-          className="
-            flex
-            flex-col
-            md:flex-row
-            items-center
-            justify-between
-            gap-6
-          "
-        >
-          {/* Left */}
-          <p
-            className="
-              text-sm
-              text-zinc-500
-            "
-          >
-            © 2026 Henok. Built with Next.js.
-          </p>
-
-          {/* Socials */}
-          <div className="flex items-center gap-5">
-            <a
-              href={personalInfo.socials.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                text-zinc-400
-                hover:text-white
-                transition-colors
-              "
-              aria-label="GitHub Profile"
-            >
-              <Menu size={18} />
-            </a>
-
-            <a
-              href={personalInfo.socials.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                text-zinc-400
-                hover:text-white
-                transition-colors
-              "
-              aria-label="LinkedIn Profile"
-            >
-              <Circle size={18} />
-            </a>
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-muted/60">
+          <div className="tracking-wide">
+            &copy; {new Date().getFullYear()} Henok. All rights reserved.
           </div>
+
+          <div className="hidden md:block tracking-wide">
+            <span className="text-foreground/80 font-medium">Next.js 15</span>{" "}
+            &amp;{" "}
+            <span className="text-foreground/80 font-medium">Tailwind v4</span>
+          </div>
+
+          <motion.button
+            onClick={scrollToTop}
+            whileHover={{ y: -2, color: "#FFFFFF" }}
+            whileTap={{ scale: 0.98 }}
+            className="flex items-center gap-1.5 hover:text-white transition-colors duration-200 group py-1 tracking-wider uppercase font-medium cursor-pointer"
+          >
+            Back to top
+            <ArrowUp
+              size={12}
+              className="transition-transform duration-300 group-hover:-translate-y-0.5"
+            />
+          </motion.button>
         </div>
       </Container>
     </footer>

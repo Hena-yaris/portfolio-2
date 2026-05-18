@@ -1,89 +1,67 @@
 @import "tailwindcss";
 
-:root {
-  --background: #050816;
-  --background-secondary: #0b1020;
-
-  --foreground: #f5f7ff;
-
-  --accent: #6366f1;
-
-  --muted: #94a3b8;
-
-  --border: rgba(255, 255, 255, 0.08);
-
-  --card: rgba(255, 255, 255, 0.03);
-}
-
-
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  min-height: 100vh;
-
-  color: var(--foreground);
-
-  background-color: var(--background);
-
-  background-image:
-    radial-gradient(
-      at 0% 0%,
-      rgba(99, 102, 241, 0.15) 0px,
-      transparent 50%
-    ),
-
-    radial-gradient(
-      at 100% 100%,
-      rgba(59, 130, 246, 0.10) 0px,
-      transparent 50%
-    );
-
-  line-height: 1.6;
-
-  text-rendering: optimizeLegibility;
-
-  -webkit-font-smoothing: antialiased;
-
-  overflow-x: hidden;
-}
-
-::selection {
-  background: white;
-  color: black;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  border: none;
-  outline: none;
-  background: none;
-
-  cursor: pointer;
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.03);
-
-  backdrop-filter: blur(12px);
-
-  border: 1px solid var(--border);
-
-  border-radius: 1.5rem;
-}
-
 @theme {
-  --color-background: var(--background);
+  /* Design Tokens mapped globally */
+  --color-background: #000000;       /* Pure Deep Black */
+  --color-foreground: #EDEDED;       /* Soft Off-White */
+  --color-muted: #A1A1A1;            /* Crisp Medium Gray */
+  --color-accent: #D4AF37;           /* Premium Matte Gold */
+  --color-card: #111111;             /* Elevated Studio Card Gray */
+  --color-border-subtle: #222222;    /* Sleek divider line */
 
-  --color-foreground: var(--foreground);
+  /* Custom cubic-bezier easing for fluid Apple-like transitions */
+  --ease-studio: cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-  --color-card: var(--card);
+/* Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+  }
 
-  --color-muted: var(--muted);
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom Minimalist Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border-subtle);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-muted);
+  }
+}
+
+/* Component & Utility Utilities */
+@utility glass-card {
+  background: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.4s var(--ease-studio);
+}
+
+@utility glass-card-hover {
+  &:hover {
+    border-color: rgba(212, 175, 55, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -15px rgba(212, 175, 55, 0.1);
+  }
+}
+
+@utility text-gradient {
+  background: linear-gradient(180deg, #FFFFFF 0%, #A1A1A1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

@@ -1,20 +1,11 @@
+export interface NavigationLink {
+  label: string;
+  href: string;
+}
 
-
-export const navigationLinks = [
-  {
-    label: "About",
-    href: "#about",
-  },
-  {
-    label: "Projects",
-    href: "#projects",
-  },
-  {
-    label: "Skills",
-    href: "#skills",
-  },
-  {
-    label: "Contact",
-    href: "#contact",
-  },
+export const navigationLinks: NavigationLink[] = [
+  { label: "Works", href: "#works" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
 ];
