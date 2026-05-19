@@ -1,14 +1,11 @@
-
-
 "use client";
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import Container from "../ui/Container"; 
+import Container from "../ui/Container";
 
-import { navigationLinks } from "@/src/data/navigation";
-
+import { navigationLinks } from "@/src/constants/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

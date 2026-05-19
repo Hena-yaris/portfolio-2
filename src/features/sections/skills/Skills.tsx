@@ -2,7 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import Container from "@/src/components/ui/Container";
-import { skillsData } from "@/src/data/skills";
+import { skillsData } from "@/src/constants/skills";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -93,6 +93,3 @@ export default function Skills() {
     </section>
   );
 }
-
-
-

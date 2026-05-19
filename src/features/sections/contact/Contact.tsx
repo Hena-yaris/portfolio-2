@@ -1,11 +1,10 @@
-
 "use client";
 
 import { useState } from "react";
 import { motion, Variants } from "framer-motion";
-import { Mail, Copy, Check} from "lucide-react";
+import { Mail, Copy, Check } from "lucide-react";
 import Container from "@/src/components/ui/Container";
-import { personalInfo } from "@/src/data/personal";
+import { personalInfo } from "@/src/constants/personal";
 
 const fadeUpVariants: Variants = {
   hidden: { opacity: 0, y: 16 },
@@ -95,7 +94,7 @@ export default function Contact() {
                 className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-muted hover:text-white border border-border-subtle/60 px-4 py-2 rounded-full bg-card/30 transition-all duration-200"
               >
                 {/* <Github size={13} /> */}
-                 GitHub
+                GitHub
               </a>
               <a
                 href={personalInfo.socials.linkedin}
@@ -104,7 +103,7 @@ export default function Contact() {
                 className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-muted hover:text-white border border-border-subtle/60 px-4 py-2 rounded-full bg-card/30 transition-all duration-200"
               >
                 {/* <Linkedin size={13} /> */}
-                 LinkedIn
+                LinkedIn
               </a>
             </div>
           </div>

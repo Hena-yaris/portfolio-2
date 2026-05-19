@@ -1,16 +1,11 @@
-
 "use client";
 
-import { motion,Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { ArrowDownRight } from "lucide-react";
-import Container from "@/src/components/ui/Container"; 
-import  {Button}  from "@/src/components/ui/Button"; 
+import Container from "@/src/components/ui/Container";
+import { Button } from "@/src/components/ui/Button";
 
-
-
-import { personalInfo } from "@/src/data/personal";
-
-
+import { personalInfo } from "@/src/constants/personal";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },

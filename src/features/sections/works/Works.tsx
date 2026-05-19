@@ -1,9 +1,9 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { ArrowUpRight,  } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Container from "@/src/components/ui/Container";
-import { projectsData } from "@/src/data/projects";
+import { projectsData } from "@/src/constants/projects";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -103,7 +103,7 @@ export default function Works() {
                   className="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-muted hover:text-white border border-border-subtle px-3 py-1.5 rounded-full bg-card/40 transition-colors duration-200"
                 >
                   {/* <Github size={12} /> Source */}
-                   Source
+                  Source
                 </a>
 
                 {project.links.live && (
@@ -124,4 +124,3 @@ export default function Works() {
     </section>
   );
 }
-
