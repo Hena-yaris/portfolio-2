@@ -59,9 +59,14 @@ export default function Hero() {
 
           <motion.div
             variants={itemVariants}
+            onClick={() =>
+              document
+                .getElementById("works")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
             className="flex items-center justify-center gap-4 pt-4"
           >
-            <Button  size="lg" className="flex items-center gap-2 group">
+            <Button size="lg" className="flex items-center gap-2 group">
               Explore Work
               <ArrowDownRight
                 size={16}
